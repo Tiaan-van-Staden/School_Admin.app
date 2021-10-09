@@ -182,7 +182,6 @@ namespace PRG282_Project
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 31);
             this.textBox1.TabIndex = 24;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -194,7 +193,6 @@ namespace PRG282_Project
             this.label9.Size = new System.Drawing.Size(70, 19);
             this.label9.TabIndex = 22;
             this.label9.Text = "Address";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // textBox5
             // 
@@ -230,7 +228,7 @@ namespace PRG282_Project
             // 
             // cmbSearch
             // 
-            this.cmbSearch.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSearch.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cmbSearch.FormattingEnabled = true;
             this.cmbSearch.Items.AddRange(new object[] {
@@ -242,7 +240,7 @@ namespace PRG282_Project
             "WPR281"});
             this.cmbSearch.Location = new System.Drawing.Point(187, 381);
             this.cmbSearch.Name = "cmbSearch";
-            this.cmbSearch.Size = new System.Drawing.Size(223, 31);
+            this.cmbSearch.Size = new System.Drawing.Size(223, 27);
             this.cmbSearch.TabIndex = 28;
             this.cmbSearch.Text = "Search Options";
             // 
