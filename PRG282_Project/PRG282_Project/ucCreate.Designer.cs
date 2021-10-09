@@ -40,12 +40,13 @@ namespace PRG282_Project
             this.rbnMale = new System.Windows.Forms.RadioButton();
             this.rbnFemale = new System.Windows.Forms.RadioButton();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxAddress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbxPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.cmbModules = new System.Windows.Forms.ComboBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,14 +175,14 @@ namespace PRG282_Project
             this.dtpDOB.Size = new System.Drawing.Size(223, 23);
             this.dtpDOB.TabIndex = 20;
             // 
-            // textBox1
+            // tbxAddress
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBox1.Location = new System.Drawing.Point(187, 335);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 31);
-            this.textBox1.TabIndex = 24;
+            this.tbxAddress.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAddress.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.tbxAddress.Location = new System.Drawing.Point(187, 335);
+            this.tbxAddress.Name = "tbxAddress";
+            this.tbxAddress.Size = new System.Drawing.Size(223, 31);
+            this.tbxAddress.TabIndex = 24;
             // 
             // label9
             // 
@@ -194,14 +195,14 @@ namespace PRG282_Project
             this.label9.TabIndex = 22;
             this.label9.Text = "Address";
             // 
-            // textBox5
+            // tbxPhone
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textBox5.Location = new System.Drawing.Point(187, 289);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 31);
-            this.textBox5.TabIndex = 17;
+            this.tbxPhone.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPhone.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.tbxPhone.Location = new System.Drawing.Point(187, 289);
+            this.tbxPhone.Name = "tbxPhone";
+            this.tbxPhone.Size = new System.Drawing.Size(223, 31);
+            this.tbxPhone.TabIndex = 17;
             // 
             // label6
             // 
@@ -213,7 +214,6 @@ namespace PRG282_Project
             this.label6.Size = new System.Drawing.Size(100, 19);
             this.label6.TabIndex = 25;
             this.label6.Text = "Phone Num";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -226,37 +226,54 @@ namespace PRG282_Project
             this.label7.TabIndex = 27;
             this.label7.Text = "Modules";
             // 
-            // cmbSearch
+            // cmbModules
             // 
-            this.cmbSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSearch.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cmbSearch.FormattingEnabled = true;
-            this.cmbSearch.Items.AddRange(new object[] {
+            this.cmbModules.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbModules.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbModules.FormattingEnabled = true;
+            this.cmbModules.Items.AddRange(new object[] {
             "LPR281",
             "MAT281",
             "PMM281",
             "PRG281",
             "PRG282",
             "WPR281"});
-            this.cmbSearch.Location = new System.Drawing.Point(187, 381);
-            this.cmbSearch.Name = "cmbSearch";
-            this.cmbSearch.Size = new System.Drawing.Size(223, 27);
-            this.cmbSearch.TabIndex = 28;
-            this.cmbSearch.Text = "Search Options";
+            this.cmbModules.Location = new System.Drawing.Point(187, 381);
+            this.cmbModules.Name = "cmbModules";
+            this.cmbModules.Size = new System.Drawing.Size(223, 27);
+            this.cmbModules.TabIndex = 28;
+            this.cmbModules.Text = "Search Options";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSubmit.FlatAppearance.BorderSize = 2;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSubmit.Location = new System.Drawing.Point(17, 444);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(393, 31);
+            this.btnSubmit.TabIndex = 29;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // ucCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cmbSearch);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.cmbModules);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxAddress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.rbnFemale);
             this.Controls.Add(this.rbnMale);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxFullname);
             this.Controls.Add(this.tbxID);
             this.Controls.Add(this.picStudent);
@@ -267,6 +284,7 @@ namespace PRG282_Project
             this.Controls.Add(this.label1);
             this.Name = "ucCreate";
             this.Size = new System.Drawing.Size(848, 494);
+            this.Load += new System.EventHandler(this.ucCreate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -286,11 +304,12 @@ namespace PRG282_Project
         private System.Windows.Forms.RadioButton rbnMale;
         private System.Windows.Forms.RadioButton rbnFemale;
         private System.Windows.Forms.DateTimePicker dtpDOB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbSearch;
+        private System.Windows.Forms.ComboBox cmbModules;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
