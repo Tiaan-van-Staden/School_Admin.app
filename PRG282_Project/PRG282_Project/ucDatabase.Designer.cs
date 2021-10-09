@@ -32,6 +32,7 @@ namespace PRG282_Project
             this.cmbSearch = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.bntSearch = new System.Windows.Forms.Button();
             this.picStudent = new System.Windows.Forms.PictureBox();
             this.rbxSummary = new System.Windows.Forms.RichTextBox();
@@ -39,10 +40,12 @@ namespace PRG282_Project
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.pnlData = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
+            this.pnlData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbSearch
@@ -81,6 +84,21 @@ namespace PRG282_Project
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(235, 494);
             this.pnlLeft.TabIndex = 4;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnDelete.FlatAppearance.BorderSize = 2;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(6, 166);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(223, 31);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete User";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // bntSearch
             // 
@@ -166,25 +184,11 @@ namespace PRG282_Project
             // pnlData
             // 
             this.pnlData.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlData.Controls.Add(this.dataGridView1);
             this.pnlData.Location = new System.Drawing.Point(235, 166);
             this.pnlData.Name = "pnlData";
             this.pnlData.Size = new System.Drawing.Size(613, 294);
             this.pnlData.TabIndex = 11;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnDelete.FlatAppearance.BorderSize = 2;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(6, 166);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(223, 31);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete User";
-            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnNext
             // 
@@ -199,6 +203,15 @@ namespace PRG282_Project
             this.btnNext.TabIndex = 12;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(613, 294);
+            this.dataGridView1.TabIndex = 0;
             // 
             // ucDatabase
             // 
@@ -218,6 +231,8 @@ namespace PRG282_Project
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).EndInit();
+            this.pnlData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +250,6 @@ namespace PRG282_Project
         private System.Windows.Forms.Panel pnlData;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
