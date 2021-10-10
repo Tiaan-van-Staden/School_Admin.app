@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PRG282_Project
 {
     public partial class frmMain : Form
     {
+        
+
         public frmMain()
         {
             InitializeComponent();
+           
         }
 
         private void btnViewDB_Click(object sender, EventArgs e)
@@ -44,7 +48,6 @@ namespace PRG282_Project
         private void frmMain_Load(object sender, EventArgs e)
         {
             //TODO: Update lblWelcome ---> lblWelcome.Text = "Welcome, "+username;
-
         }
     }
 }
