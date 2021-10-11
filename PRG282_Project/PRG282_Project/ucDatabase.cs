@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace PRG282_Project
@@ -47,7 +48,7 @@ namespace PRG282_Project
 
         public void bntSearch_Click(object sender, EventArgs e)
         {
-            string search = txtSearchdata.Text; 
+            int search = int.Parse(txtSearchdata.Text); 
             int selectedIndex = cmbSearch.SelectedIndex;
             //MessageBox.Show("Index: " + selectedIndex.ToString());//Test selected item value
             if (selectedIndex == 0)
