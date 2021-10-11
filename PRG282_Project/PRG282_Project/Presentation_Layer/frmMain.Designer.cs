@@ -31,6 +31,7 @@ namespace PRG282_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.btnViewModUpdt = new System.Windows.Forms.Button();
@@ -39,15 +40,14 @@ namespace PRG282_Project
             this.btnViewStudntCrt = new System.Windows.Forms.Button();
             this.btnViewDB = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.ucUpdateStudent = new PRG282_Project.ucUpdateStdnt();
             this.ucDatabase1 = new PRG282_Project.ucDatabase();
             this.ucCreateStudent = new PRG282_Project.ucCreate();
             this.ucCreateMod1 = new PRG282_Project.Presentation_Layer.ucCreateMod();
             this.ucUpdateMod1 = new PRG282_Project.Presentation_Layer.ucUpdateMod();
             this.pnlTop.SuspendLayout();
-            this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.pnlLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -60,6 +60,17 @@ namespace PRG282_Project
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1017, 107);
             this.pnlTop.TabIndex = 0;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.BackgroundImage = global::PRG282_Project.Properties.Resources.BC_Logo;
+            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgLogo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.imgLogo.Location = new System.Drawing.Point(613, 0);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(404, 107);
+            this.imgLogo.TabIndex = 1;
+            this.imgLogo.TabStop = false;
             // 
             // lblWelcome
             // 
@@ -184,17 +195,6 @@ namespace PRG282_Project
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // imgLogo
-            // 
-            this.imgLogo.BackgroundImage = global::PRG282_Project.Properties.Resources.BC_Logo;
-            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgLogo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.imgLogo.Location = new System.Drawing.Point(613, 0);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(404, 107);
-            this.imgLogo.TabIndex = 1;
-            this.imgLogo.TabStop = false;
-            // 
             // ucUpdateStudent
             // 
             this.ucUpdateStudent.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -237,6 +237,7 @@ namespace PRG282_Project
             this.ucUpdateMod1.Name = "ucUpdateMod1";
             this.ucUpdateMod1.Size = new System.Drawing.Size(848, 494);
             this.ucUpdateMod1.TabIndex = 6;
+            this.ucUpdateMod1.Visible = false;
             // 
             // frmMain
             // 
@@ -257,8 +258,8 @@ namespace PRG282_Project
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.pnlLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.pnlLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

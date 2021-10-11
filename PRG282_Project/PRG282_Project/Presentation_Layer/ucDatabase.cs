@@ -30,6 +30,7 @@ namespace PRG282_Project
         }
         public void bntSearch_Click(object sender, EventArgs e)
         {
+            //TODO: add check so that input is only numbers
             int search = int.Parse(txtSearchdata.Text); 
             int selectedIndex = cmbSearch.SelectedIndex;
 
@@ -84,7 +85,6 @@ namespace PRG282_Project
         private void dgvDatabase_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
-
         }
     }
 }
