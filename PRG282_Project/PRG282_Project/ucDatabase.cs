@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace PRG282_Project
@@ -19,73 +18,27 @@ namespace PRG282_Project
         {
             InitializeComponent();
         }
-
+        DataHandler handler = new DataHandler();
         private void ucDatabase_Load(object sender, EventArgs e)
         {
             cmbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             //cmbSearch.SelectedItem = "Search for Student ID"; //text instead of item value
             cmbSearch.SelectedIndex = 0;
-
-            //connection to database starts
-            conn = new SqlConnection("Server=.; Initial Catalog=StudentDB; Integrated Security=SSPI");
-            try
-            {
-                conn.Open();
-                //MessageBox.Show("Database Connection Successful");              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            SqlCommand cmd = new SqlCommand("Select StudentID, StudentNames, StudentDOB, StudentGender, StudentPhone, StudentAddress, ModuleCodes From StudentInfo", conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            BindingSource source = new BindingSource();
-            source.DataSource = reader;
-            dgvDatabase.DataSource = source;
-            conn.Close();
-            //connection ends
+            dgvDatabase.DataSource = handler.showAllStudents();
+           
         }
-        //test comment for Github......
         public void bntSearch_Click(object sender, EventArgs e)
         {
             int search = int.Parse(txtSearchdata.Text); 
             int selectedIndex = cmbSearch.SelectedIndex;
-            //MessageBox.Show("Index: " + selectedIndex.ToString());//Test selected item value
+
             if (selectedIndex == 0)
             {
-                //TODO: search for Student ID
-                //MessageBox.Show("Studnet");//Testing if this matches selected combobox
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("Select StudentID, StudentNames, StudentDOB, StudentGender, StudentPhone, StudentAddress, ModuleCodes From StudentInfo WHERE StudentID=" + search, conn);
-                try
-                {                                     
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    BindingSource source = new BindingSource();
-                    source.DataSource = reader;
-                    dgvDatabase.DataSource = source;
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
+                dgvDatabase.DataSource = handler.searchStudents(int.Parse(txtSearchdata.Text));
             }
             else
             {
-                //TODO: search Module
-                //MessageBox.Show("Module");//Testing if this matches selected combobox
-
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From ModuleInfo WHERE ModuleCodes=" + search, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                BindingSource source = new BindingSource();
-                source.DataSource = reader;
-                dgvDatabase.DataSource = source;
-                conn.Close();
+                dgvDatabase.DataSource = handler.searchModules(int.Parse(txtSearchdata.Text));
             }
         }
 
@@ -98,11 +51,7 @@ namespace PRG282_Project
                 //Deleting a student by searched StudentID
                 try
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM StudentInfo WHERE StudentID=" + search, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    MessageBox.Show("Deleted Student");
-                    conn.Close();
+                    handler.deleteStudent(int.Parse(txtSearchdata.Text));
                 }
                 catch
                 {
@@ -110,13 +59,7 @@ namespace PRG282_Project
                 }
                 finally
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("Select StudentID, StudentNames, StudentDOB, StudentGender, StudentPhone, StudentAddress, ModuleCodes From StudentInfo", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    BindingSource source = new BindingSource();
-                    source.DataSource = reader;
-                    dgvDatabase.DataSource = source;
-                    conn.Close();
+                    dgvDatabase.DataSource = handler.showAllStudents();
                 }
             }
             else
@@ -124,11 +67,7 @@ namespace PRG282_Project
                 //Deleting a module by searched ModuleCode
                 try
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM ModuleInfo WHERE ModuleCodes=" + search, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    MessageBox.Show("Deleted Module");
-                    conn.Close();
+                    handler.deleteModule(int.Parse(txtSearchdata.Text));
                 }
                 catch
                 {
@@ -136,13 +75,7 @@ namespace PRG282_Project
                 }
                 finally
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM ModuleInfo", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    BindingSource source = new BindingSource();
-                    source.DataSource = reader;
-                    dgvDatabase.DataSource = source;
-                    conn.Close();
+                    dgvDatabase.DataSource = handler.showAllModules();
                 }
             }
         }

@@ -49,4 +49,55 @@ INSERT INTO ModuleInfo (ModuleCodes, ModuleName, ModuleDesc, ModuleLinks) Values
 SELECT * FROM StudentInfo
 SELECT * FROM ModuleInfo
 
+CREATE PROCEDURE spShowAllStudnets
+AS 
+BEGIN
+	SELECT * FROM StudentInfo
+END
 
+CREATE PROCEDURE spShowAllModules
+AS 
+BEGIN
+	SELECT * FROM ModuleInfo
+END
+
+
+CREATE PROCEDURE spSearchStudents
+(
+@Id Int 
+)
+AS
+BEGIN 
+	SELECT * FROM StudentInfo
+	WHERE StudentID = @Id
+END
+
+CREATE PROCEDURE spSearchModules
+(
+@Id Int 
+)
+AS
+BEGIN 
+	SELECT * FROM ModuleInfo
+	WHERE ModuleCodes = @Id
+END
+
+CREATE PROCEDURE spDeleteStudents
+(
+@Id Int 
+)
+AS
+BEGIN 
+	DELETE FROM StudentInfo 
+	WHERE StudentID = @Id
+END
+
+CREATE PROCEDURE spDeleteModule
+(
+@Id Int 
+)
+AS
+BEGIN 
+	DELETE FROM ModuleInfo 
+	WHERE ModuleCodes = @Id
+END
