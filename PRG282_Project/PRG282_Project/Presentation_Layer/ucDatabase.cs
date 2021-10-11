@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using PRG282_Project.Data_Layer;
 
 namespace PRG282_Project
 {
@@ -83,6 +84,7 @@ namespace PRG282_Project
         private void dgvDatabase_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
+
         }
     }
 }

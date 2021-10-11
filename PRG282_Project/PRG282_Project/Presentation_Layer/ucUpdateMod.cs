@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MilestonePRG282_class
+namespace PRG282_Project.Presentation_Layer
 {
-    public partial class Form1 : Form
+    public partial class ucUpdateMod : UserControl
     {
-        public Form1()
+        public ucUpdateMod()
         {
             InitializeComponent();
         }

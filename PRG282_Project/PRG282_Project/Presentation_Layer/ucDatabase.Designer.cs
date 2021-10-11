@@ -71,6 +71,7 @@ namespace PRG282_Project
             this.txtSearchdata.Name = "txtSearchdata";
             this.txtSearchdata.Size = new System.Drawing.Size(223, 31);
             this.txtSearchdata.TabIndex = 2;
+            this.txtSearchdata.Text = "Search Here";
             // 
             // pnlLeft
             // 

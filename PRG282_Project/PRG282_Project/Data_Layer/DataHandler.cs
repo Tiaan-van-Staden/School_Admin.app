@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace PRG282_Project
+namespace PRG282_Project.Data_Layer
 {
     class DataHandler
     {
