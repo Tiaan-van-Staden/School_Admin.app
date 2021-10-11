@@ -41,7 +41,7 @@ namespace PRG282_Project
             SqlDataReader reader = cmd.ExecuteReader();
             BindingSource source = new BindingSource();
             source.DataSource = reader;
-            dataGridView1.DataSource = source;
+            dgvDatabase.DataSource = source;
             conn.Close();
             //connection ends
         }
@@ -62,7 +62,7 @@ namespace PRG282_Project
                     SqlDataReader reader = cmd.ExecuteReader();
                     BindingSource source = new BindingSource();
                     source.DataSource = reader;
-                    dataGridView1.DataSource = source;
+                    dgvDatabase.DataSource = source;
                 }
                 catch (SqlException ex)
                 {
@@ -84,7 +84,7 @@ namespace PRG282_Project
                 SqlDataReader reader = cmd.ExecuteReader();
                 BindingSource source = new BindingSource();
                 source.DataSource = reader;
-                dataGridView1.DataSource = source;
+                dgvDatabase.DataSource = source;
                 conn.Close();
             }
         }
@@ -115,7 +115,7 @@ namespace PRG282_Project
                     SqlDataReader reader = cmd.ExecuteReader();
                     BindingSource source = new BindingSource();
                     source.DataSource = reader;
-                    dataGridView1.DataSource = source;
+                    dgvDatabase.DataSource = source;
                     conn.Close();
                 }
             }
@@ -141,10 +141,15 @@ namespace PRG282_Project
                     SqlDataReader reader = cmd.ExecuteReader();
                     BindingSource source = new BindingSource();
                     source.DataSource = reader;
-                    dataGridView1.DataSource = source;
+                    dgvDatabase.DataSource = source;
                     conn.Close();
                 }
             }
+        }
+
+        private void dgvDatabase_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

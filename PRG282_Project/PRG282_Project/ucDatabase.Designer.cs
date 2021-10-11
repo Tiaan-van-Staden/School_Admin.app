@@ -40,12 +40,12 @@ namespace PRG282_Project
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.pnlData = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDatabase = new System.Windows.Forms.DataGridView();
             this.btnNext = new System.Windows.Forms.Button();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
             this.pnlData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbSearch
@@ -185,20 +185,21 @@ namespace PRG282_Project
             // pnlData
             // 
             this.pnlData.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlData.Controls.Add(this.dataGridView1);
+            this.pnlData.Controls.Add(this.dgvDatabase);
             this.pnlData.Location = new System.Drawing.Point(235, 166);
             this.pnlData.Name = "pnlData";
             this.pnlData.Size = new System.Drawing.Size(613, 294);
             this.pnlData.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvDatabase
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(613, 294);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatabase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDatabase.Location = new System.Drawing.Point(0, 0);
+            this.dgvDatabase.Name = "dgvDatabase";
+            this.dgvDatabase.Size = new System.Drawing.Size(613, 294);
+            this.dgvDatabase.TabIndex = 0;
+            this.dgvDatabase.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDatabase_DataError);
             // 
             // btnNext
             // 
@@ -233,7 +234,7 @@ namespace PRG282_Project
             this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).EndInit();
             this.pnlData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,6 +252,6 @@ namespace PRG282_Project
         private System.Windows.Forms.Panel pnlData;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDatabase;
     }
 }
