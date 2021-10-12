@@ -8,6 +8,16 @@ namespace PRG282_Project.Logic_Layer
 {
     class Users
     {
-        //insert code here
+        string name;
+        string password;
+
+        public Users(string name, string password)
+        {
+            this.Name = name;
+            this.Password = password;
+        }
+
+        public string Name { get => name; set => name = value; }
+        public string Password { get => password; set => password = value; }
     }
 }

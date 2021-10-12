@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project.Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,10 +47,18 @@ namespace PRG282_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //TODO: Check account
-            frmMain MainLoad = new frmMain();
-            this.Hide();
-            MainLoad.Show();
+            Login verify = new Login();
+            verify.inputuser = tbxUsername.Text;
+            verify.inputpassword = tbxPassw1.Text;
+            Boolean formclose = verify.Verify();
+
+            if (formclose == true)
+            {
+                //TODO: Check account
+                frmMain MainLoad = new frmMain();
+                this.Hide();
+                MainLoad.Show();
+            }  
         }
 
 
@@ -65,6 +74,11 @@ namespace PRG282_Project
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();//Free program from memory/processing
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
