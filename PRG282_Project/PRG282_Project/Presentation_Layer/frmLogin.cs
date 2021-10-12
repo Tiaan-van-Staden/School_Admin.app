@@ -66,7 +66,26 @@ namespace PRG282_Project
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            
+            //FileStream mystream = new FileStream(@"C:\Users\tiaan\Desktop\ItIzz\Registerd.txt", FileMode.Open);
+            //StreamWriter wrt = new StreamWriter(mystream);
+
+            string p1 = tbxPassw1.Text;
+            string p2 = tbxPassw2.Text;
+            string un = tbxUsername.Text;
+
+            if (p1 == p2)
+            {
+                //wrt.WriteLine(un + " " + p1);
+                File.WriteAllText(@"C:\Users\tiaan\Desktop\ItIzz\Registerd.txt", un + " " + p1); //TODO: fix bug with writing
+                MessageBox.Show("Acount succesfully created please log in to continue");
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match");
+            }
+
+            //wrt.Close();
+            //mystream.Close();
             
         }
 
