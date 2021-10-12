@@ -16,5 +16,15 @@ namespace PRG282_Project.Presentation_Layer
         {
             InitializeComponent();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //TODO: Check empty fields
+            //TODO: Update Module
+            tbxCode.Text = "";
+            tbxDesc.Text = "";
+            tbxLink.Text = "";
+            tbxName.Text = "";
+        }
     }
 }

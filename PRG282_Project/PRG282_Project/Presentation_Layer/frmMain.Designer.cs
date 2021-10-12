@@ -40,11 +40,11 @@ namespace PRG282_Project
             this.btnViewStudntCrt = new System.Windows.Forms.Button();
             this.btnViewDB = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.ucUpdateMod1 = new PRG282_Project.Presentation_Layer.ucUpdateMod();
+            this.ucCreateMod1 = new PRG282_Project.Presentation_Layer.ucCreateMod();
             this.ucUpdateStudent = new PRG282_Project.ucUpdateStdnt();
             this.ucDatabase1 = new PRG282_Project.ucDatabase();
             this.ucCreateStudent = new PRG282_Project.ucCreate();
-            this.ucCreateMod1 = new PRG282_Project.Presentation_Layer.ucCreateMod();
-            this.ucUpdateMod1 = new PRG282_Project.Presentation_Layer.ucUpdateMod();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.pnlLeft.SuspendLayout();
@@ -195,6 +195,23 @@ namespace PRG282_Project
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // ucUpdateMod1
+            // 
+            this.ucUpdateMod1.Location = new System.Drawing.Point(169, 107);
+            this.ucUpdateMod1.Name = "ucUpdateMod1";
+            this.ucUpdateMod1.Size = new System.Drawing.Size(848, 494);
+            this.ucUpdateMod1.TabIndex = 6;
+            this.ucUpdateMod1.Visible = false;
+            // 
+            // ucCreateMod1
+            // 
+            this.ucCreateMod1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCreateMod1.Location = new System.Drawing.Point(169, 107);
+            this.ucCreateMod1.Name = "ucCreateMod1";
+            this.ucCreateMod1.Size = new System.Drawing.Size(848, 494);
+            this.ucCreateMod1.TabIndex = 5;
+            this.ucCreateMod1.Visible = false;
+            // 
             // ucUpdateStudent
             // 
             this.ucUpdateStudent.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -222,23 +239,6 @@ namespace PRG282_Project
             this.ucCreateStudent.TabIndex = 2;
             this.ucCreateStudent.Visible = false;
             // 
-            // ucCreateMod1
-            // 
-            this.ucCreateMod1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCreateMod1.Location = new System.Drawing.Point(169, 107);
-            this.ucCreateMod1.Name = "ucCreateMod1";
-            this.ucCreateMod1.Size = new System.Drawing.Size(848, 494);
-            this.ucCreateMod1.TabIndex = 5;
-            this.ucCreateMod1.Visible = false;
-            // 
-            // ucUpdateMod1
-            // 
-            this.ucUpdateMod1.Location = new System.Drawing.Point(169, 107);
-            this.ucUpdateMod1.Name = "ucUpdateMod1";
-            this.ucUpdateMod1.Size = new System.Drawing.Size(848, 494);
-            this.ucUpdateMod1.TabIndex = 6;
-            this.ucUpdateMod1.Visible = false;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +255,7 @@ namespace PRG282_Project
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Belgium Campus Student Database";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

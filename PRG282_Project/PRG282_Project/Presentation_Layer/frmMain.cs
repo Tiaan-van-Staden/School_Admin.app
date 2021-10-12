@@ -19,11 +19,15 @@ namespace PRG282_Project
         public frmMain()
         {
             InitializeComponent();
-           
         }
+        //boolean check used when closing this form
+        public static bool blFormCloseProcess;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             //TODO: Update lblWelcome ---> lblWelcome.Text = "Welcome, "+username;
+            //reset boolean value on form load
+            blFormCloseProcess = true;
         }
 
         private void btnViewDB_Click(object sender, EventArgs e)
@@ -98,11 +102,21 @@ namespace PRG282_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //blFormCloseProcess = false; tells the program to not close application when clicked on the exit button
+            blFormCloseProcess = false;
             frmLogin LoginLoad = new frmLogin();
             LoginLoad.Show();
             this.Close();
         }
 
-
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //if the form is closed without opening the login page, the appliaction will close
+            //This then ensures that the program is no longer running in the background and using resources
+            if (blFormCloseProcess == true)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

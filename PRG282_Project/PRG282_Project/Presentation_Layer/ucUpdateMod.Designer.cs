@@ -117,6 +117,7 @@ namespace PRG282_Project.Presentation_Layer
             this.btnSubmit.TabIndex = 89;
             this.btnSubmit.Text = "Update";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label8
             // 

@@ -16,19 +16,13 @@ namespace PRG282_Project
         {
             InitializeComponent();
         }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void ucUpdateStdnt_Load(object sender, EventArgs e)
         {
-            //TODO: Check for empty fields
-            //TODO: Save to database
-            tbxID.Text = "";
-            tbxFullname.Text = "";
-            rbnMale.Checked = false;
-            rbnFemale.Checked = false;
-            tbxPhone.Text = "";
-            tbxAddress.Text = "";
-            picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
+            cmbModules.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cmbSearch.SelectedItem = "Search for Student ID"; //text instead of item value
+            cmbModules.SelectedIndex = 0;
         }
+
         private void picStudent_Click(object sender, EventArgs e)
         {
             //TODO: add code to save pic
@@ -51,14 +45,20 @@ namespace PRG282_Project
             {
                 rbnMale.Checked = false;
             }
-            //TODO: add money
         }
 
-        private void ucUpdateStdnt_Load(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            cmbModules.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cmbSearch.SelectedItem = "Search for Student ID"; //text instead of item value
-            cmbModules.SelectedIndex = 0;
+            //TODO: Check for empty fields
+            //TODO: Save to database
+            tbxID.Text = "";
+            tbxFullname.Text = "";
+            rbnMale.Checked = false;
+            rbnFemale.Checked = false;
+            tbxPhone.Text = "";
+            tbxAddress.Text = "";
+            picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
         }
+
     }
 }

@@ -39,7 +39,6 @@ namespace PRG282_Project
             {
                 rbnMale.Checked = false;
             }
-            //TODO: add money
         }
 
         private void ucCreate_Load(object sender, EventArgs e)
