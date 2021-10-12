@@ -44,7 +44,6 @@ namespace PRG282_Project
             this.lblPassw2 = new System.Windows.Forms.Label();
             this.tbxPassw2 = new System.Windows.Forms.TextBox();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlBottom.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlRegister.SuspendLayout();
@@ -57,9 +56,10 @@ namespace PRG282_Project
             this.pnlBottom.Controls.Add(this.btnLogin);
             this.pnlBottom.Controls.Add(this.btnShowRegister);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 417);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 513);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(544, 100);
+            this.pnlBottom.Size = new System.Drawing.Size(725, 123);
             this.pnlBottom.TabIndex = 1;
             // 
             // btnBack
@@ -70,9 +70,10 @@ namespace PRG282_Project
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnBack.Location = new System.Drawing.Point(280, 24);
+            this.btnBack.Location = new System.Drawing.Point(373, 30);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(252, 50);
+            this.btnBack.Size = new System.Drawing.Size(336, 62);
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -88,9 +89,10 @@ namespace PRG282_Project
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegister.Location = new System.Drawing.Point(12, 24);
+            this.btnRegister.Location = new System.Drawing.Point(16, 30);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(252, 50);
+            this.btnRegister.Size = new System.Drawing.Size(336, 62);
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -105,9 +107,10 @@ namespace PRG282_Project
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.Location = new System.Drawing.Point(280, 24);
+            this.btnLogin.Location = new System.Drawing.Point(373, 30);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(252, 50);
+            this.btnLogin.Size = new System.Drawing.Size(336, 62);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -119,9 +122,10 @@ namespace PRG282_Project
             this.btnShowRegister.FlatAppearance.BorderSize = 2;
             this.btnShowRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowRegister.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowRegister.Location = new System.Drawing.Point(12, 24);
+            this.btnShowRegister.Location = new System.Drawing.Point(16, 30);
+            this.btnShowRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowRegister.Name = "btnShowRegister";
-            this.btnShowRegister.Size = new System.Drawing.Size(252, 50);
+            this.btnShowRegister.Size = new System.Drawing.Size(336, 62);
             this.btnShowRegister.TabIndex = 0;
             this.btnShowRegister.Text = "Create New Account?";
             this.btnShowRegister.UseVisualStyleBackColor = true;
@@ -134,9 +138,10 @@ namespace PRG282_Project
             this.pnlMain.Controls.Add(this.tbxPassw1);
             this.pnlMain.Controls.Add(this.tbxUsername);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMain.Location = new System.Drawing.Point(0, 199);
+            this.pnlMain.Location = new System.Drawing.Point(0, 245);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(544, 144);
+            this.pnlMain.Size = new System.Drawing.Size(725, 177);
             this.pnlMain.TabIndex = 2;
             // 
             // lblPassw1
@@ -144,9 +149,10 @@ namespace PRG282_Project
             this.lblPassw1.AutoSize = true;
             this.lblPassw1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassw1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblPassw1.Location = new System.Drawing.Point(3, 109);
+            this.lblPassw1.Location = new System.Drawing.Point(4, 134);
+            this.lblPassw1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassw1.Name = "lblPassw1";
-            this.lblPassw1.Size = new System.Drawing.Size(105, 32);
+            this.lblPassw1.Size = new System.Drawing.Size(126, 37);
             this.lblPassw1.TabIndex = 3;
             this.lblPassw1.Text = "Password";
             this.lblPassw1.UseCompatibleTextRendering = true;
@@ -156,9 +162,10 @@ namespace PRG282_Project
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblName.Location = new System.Drawing.Point(3, 40);
+            this.lblName.Location = new System.Drawing.Point(4, 49);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(113, 32);
+            this.lblName.Size = new System.Drawing.Size(135, 37);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Username";
             this.lblName.UseCompatibleTextRendering = true;
@@ -167,30 +174,32 @@ namespace PRG282_Project
             // 
             this.tbxPassw1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPassw1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.tbxPassw1.Location = new System.Drawing.Point(203, 106);
+            this.tbxPassw1.Location = new System.Drawing.Point(271, 130);
+            this.tbxPassw1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxPassw1.Name = "tbxPassw1";
             this.tbxPassw1.PasswordChar = '•';
-            this.tbxPassw1.Size = new System.Drawing.Size(329, 33);
+            this.tbxPassw1.Size = new System.Drawing.Size(437, 38);
             this.tbxPassw1.TabIndex = 1;
             // 
             // tbxUsername
             // 
             this.tbxUsername.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUsername.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.tbxUsername.Location = new System.Drawing.Point(203, 37);
+            this.tbxUsername.Location = new System.Drawing.Point(271, 46);
+            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(329, 33);
+            this.tbxUsername.Size = new System.Drawing.Size(437, 38);
             this.tbxUsername.TabIndex = 0;
             // 
             // pnlRegister
             // 
-            this.pnlRegister.Controls.Add(this.label1);
             this.pnlRegister.Controls.Add(this.lblPassw2);
             this.pnlRegister.Controls.Add(this.tbxPassw2);
             this.pnlRegister.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRegister.Location = new System.Drawing.Point(0, 343);
+            this.pnlRegister.Location = new System.Drawing.Point(0, 422);
+            this.pnlRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRegister.Name = "pnlRegister";
-            this.pnlRegister.Size = new System.Drawing.Size(544, 74);
+            this.pnlRegister.Size = new System.Drawing.Size(725, 91);
             this.pnlRegister.TabIndex = 3;
             this.pnlRegister.Visible = false;
             // 
@@ -199,9 +208,10 @@ namespace PRG282_Project
             this.lblPassw2.AutoSize = true;
             this.lblPassw2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassw2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblPassw2.Location = new System.Drawing.Point(3, 31);
+            this.lblPassw2.Location = new System.Drawing.Point(4, 38);
+            this.lblPassw2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassw2.Name = "lblPassw2";
-            this.lblPassw2.Size = new System.Drawing.Size(194, 32);
+            this.lblPassw2.Size = new System.Drawing.Size(232, 37);
             this.lblPassw2.TabIndex = 4;
             this.lblPassw2.Text = "Confirm Password";
             this.lblPassw2.UseCompatibleTextRendering = true;
@@ -210,10 +220,11 @@ namespace PRG282_Project
             // 
             this.tbxPassw2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPassw2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.tbxPassw2.Location = new System.Drawing.Point(203, 31);
+            this.tbxPassw2.Location = new System.Drawing.Point(271, 38);
+            this.tbxPassw2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxPassw2.Name = "tbxPassw2";
             this.tbxPassw2.PasswordChar = '•';
-            this.tbxPassw2.Size = new System.Drawing.Size(329, 33);
+            this.tbxPassw2.Size = new System.Drawing.Size(437, 38);
             this.tbxPassw2.TabIndex = 4;
             // 
             // pnlTop
@@ -223,29 +234,22 @@ namespace PRG282_Project
             this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(544, 199);
+            this.pnlTop.Size = new System.Drawing.Size(725, 245);
             this.pnlTop.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "dummy label";
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 517);
+            this.ClientSize = new System.Drawing.Size(725, 636);
             this.Controls.Add(this.pnlRegister);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
@@ -276,7 +280,6 @@ namespace PRG282_Project
         private System.Windows.Forms.Label lblPassw1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPassw2;
-        private System.Windows.Forms.Label label1;
     }
 }
 

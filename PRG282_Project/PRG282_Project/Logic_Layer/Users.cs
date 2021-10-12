@@ -19,5 +19,6 @@ namespace PRG282_Project.Logic_Layer
 
         public string Name { get => name; set => name = value; }
         public string Password { get => password; set => password = value; }
+
     }
 }
