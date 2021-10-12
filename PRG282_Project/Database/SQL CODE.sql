@@ -6,22 +6,22 @@ GO
 
 CREATE TABLE StudentInfo 
 (
-StudentID INT,
-StudentNames VARCHAR(40), 
-StudentImg IMAGE,
-StudentDOB VARCHAR(50),
-StudentGender VARCHAR(30),
-StudentPhone VARCHAR(10),
-StudentAddress VARCHAR(50),
-ModuleCodes INT,
+	StudentID INT,
+	StudentNames VARCHAR(40), 
+	StudentImg IMAGE,
+	StudentDOB VARCHAR(50),
+	StudentGender VARCHAR(30),
+	StudentPhone VARCHAR(10),
+	StudentAddress VARCHAR(50),
+	ModuleCodes INT,
 );
 
 CREATE TABLE ModuleInfo
 (
-ModuleCodes INT, 
-ModuleName VARCHAR(50),
-ModuleDesc VARCHAR(100),
-ModuleLinks VARCHAR(200) 
+	ModuleCodes INT, 
+	ModuleName VARCHAR(50),
+	ModuleDesc VARCHAR(100),
+	ModuleLinks VARCHAR(200) 
 );
 
 
@@ -101,3 +101,64 @@ BEGIN
 	DELETE FROM ModuleInfo 
 	WHERE ModuleCodes = @Id
 END
+CREATE PROCEDURE spAddstudent
+(
+	@StudentID INT,
+	@StudentNames VARCHAR(40), 
+	@StudentImg IMAGE,
+	@StudentDOB VARCHAR(50),
+	@StudentGender VARCHAR(30),
+	@StudentPhone VARCHAR(10),
+	@StudentAddress VARCHAR(50),
+	@ModuleCodes INT
+)
+AS
+	BEGIN
+		INSERT INTO StudentInfo
+		VALUES (@StudentID, @StudentNames,@StudentImg,@StudentDOB,@StudentGender,@StudentPhone,@StudentAddress,@ModuleCodes)
+	END
+CREATE PROCEDURE spUpdatestudent
+(
+	@StudentID INT,
+	@StudentNames VARCHAR(40), 
+	@StudentImg IMAGE,
+	@StudentDOB VARCHAR(50),
+	@StudentGender VARCHAR(30),
+	@StudentPhone VARCHAR(10),
+	@StudentAddress VARCHAR(50),
+	@ModuleCodes INT
+)
+AS
+	BEGIN
+		UPDATE StudentInfo
+		SET StudentID = @StudentID, StudentNames = @StudentNames, StudentImg = @StudentImg,StudentDOB = @StudentDOB,StudentGender = @StudentGender,StudentPhone = @StudentPhone,
+		StudentAddress = @StudentAddress,ModuleCodes = @ModuleCodes
+		WHERE StudentID = @StudentID
+	END
+
+CREATE PROCEDURE spAddModule
+(
+	@ModuleCodes INT, 
+	@ModuleName VARCHAR(50),
+	@ModuleDesc VARCHAR(100),
+	@ModuleLinks VARCHAR(200)
+)
+AS
+	BEGIN
+		INSERT INTO ModuleInfo
+		VALUES (@ModuleCodes, @ModuleName,@ModuleDesc,@ModuleLinks)
+	END
+
+CREATE PROCEDURE spUpdateModule
+(
+	@ModuleCodes INT, 
+	@ModuleName VARCHAR(50),
+	@ModuleDesc VARCHAR(100),
+	@ModuleLinks VARCHAR(200)
+)
+AS
+	BEGIN
+		UPDATE ModuleInfo
+		SET ModuleCodes = @ModuleCodes, ModuleName = @ModuleName, ModuleDesc = @ModuleDesc, ModuleLinks = @ModuleLinks
+		WHERE ModuleCodes = @ModuleCodes
+	END

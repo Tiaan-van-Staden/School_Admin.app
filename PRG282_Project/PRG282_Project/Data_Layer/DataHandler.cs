@@ -12,7 +12,7 @@ namespace PRG282_Project.Data_Layer
     {
         public DataHandler() { }
 
-        string conn = "Server=(local); Initial Catalog=StudentDB; Integrated Security= SSPI";
+        string conn = "Server=(local); Initial Catalog=StudentDB; Integrated Security=SSPI";
 
         public DataTable showAllStudents()
         {
@@ -93,5 +93,42 @@ namespace PRG282_Project.Data_Layer
             }
         }
 
+        public void updateStudent(int id, string name, string img, string dob, string gender,string phone, string address, string modulecode)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                SqlCommand cmd = new SqlCommand("spUpdatestudent", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@StudentID", id);
+                cmd.Parameters.AddWithValue("@StudentName", name);
+                cmd.Parameters.AddWithValue("@StudentImg", img);
+                cmd.Parameters.AddWithValue("@StudentDob", dob);
+                cmd.Parameters.AddWithValue("@StudentGender", gender);
+                cmd.Parameters.AddWithValue("@StudentPhone", phone);
+                cmd.Parameters.AddWithValue("@StudentAddress", address);
+                cmd.Parameters.AddWithValue("@ModuleCode", modulecode);
+                
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void updateModule(int code, string modulename, string moduledesc, string modulelink)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                SqlCommand cmd = new SqlCommand("spUpdateModules", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ModuleCode", code);
+                cmd.Parameters.AddWithValue("@ModuleName", modulename);
+                cmd.Parameters.AddWithValue("@ModuleDesc", moduledesc);
+                cmd.Parameters.AddWithValue("@ModuleLink", modulelink);
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
