@@ -16,5 +16,10 @@ namespace PRG282_Project.Presentation_Layer
         {
             InitializeComponent();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
