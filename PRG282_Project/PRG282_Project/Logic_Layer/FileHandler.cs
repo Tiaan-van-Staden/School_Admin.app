@@ -13,10 +13,14 @@ namespace PRG282_Project.Logic_Layer
         List<Users> user = new List<Users>();
         List<string> users = new List<string>();
         List<string> pass = new List<string>();
-        
+
+        public static string LoginUsername;
+
         public void Login(string uname, string p1)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\tiaan\Documents\GitHub\MilestonePRG282-class\bin\registerd.txt");
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            var file = Path.Combine(projectFolder, @"bin\Registerd.txt");
+            StreamReader sr = new StreamReader(@"" + file);
             string line = "";
 
             while ((line = sr.ReadLine()) != null)
@@ -31,6 +35,7 @@ namespace PRG282_Project.Logic_Layer
                 MessageBox.Show("Welcome " + uname);
                 frmMain MainLoad = new frmMain();
                 frmLogin frmlog = new frmLogin();
+                LoginUsername = uname;
                 frmlog.Hide();   //TODO: lucien please look at why this doesnt hide
                 MainLoad.Show();
             }
@@ -44,7 +49,9 @@ namespace PRG282_Project.Logic_Layer
 
         public void Register(string un, string p1, string p2)
         {
-            TextWriter wrt = new StreamWriter(@"C:\Users\tiaan\Documents\GitHub\MilestonePRG282-class\bin\registerd.txt", true);
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            var file = Path.Combine(projectFolder, @"bin\Registerd.txt");
+            TextWriter wrt = new StreamWriter(@"" + file, true);
             string usern = un;
             string pas1 = p1;
             string pas2 = p2;

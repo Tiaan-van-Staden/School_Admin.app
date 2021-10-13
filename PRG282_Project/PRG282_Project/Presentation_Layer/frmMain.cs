@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using PRG282_Project.Logic_Layer;
 //using PRG282_Project.
 
 namespace PRG282_Project
@@ -22,10 +23,12 @@ namespace PRG282_Project
         }
         //boolean check used when closing this form
         public static bool blFormCloseProcess;
+        string CurrentUsername;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //TODO: Update lblWelcome ---> lblWelcome.Text = "Welcome, "+username;
+            CurrentUsername = FileHandler.LoginUsername;
+            lblWelcome.Text = "Welcome, "+CurrentUsername;
             //reset boolean value on form load
             blFormCloseProcess = true;
         }
