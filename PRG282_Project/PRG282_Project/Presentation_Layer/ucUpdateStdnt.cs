@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRG282_Project.Logic_Layer;
 
 namespace PRG282_Project
 {
@@ -16,6 +17,9 @@ namespace PRG282_Project
         {
             InitializeComponent();
         }
+        public string PicFileName = "";
+        public string PicName = "";
+        FileHandler handlerF = new FileHandler();
         private void ucUpdateStdnt_Load(object sender, EventArgs e)
         {
             cmbModules.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -25,8 +29,23 @@ namespace PRG282_Project
 
         private void picStudent_Click(object sender, EventArgs e)
         {
-            //TODO: add code to save pic
-            MessageBox.Show("Insert code to save image", "Remove this message when done with code");
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Open Image file";
+            openFile.Filter = "Image Files(*.JPG;*.PNG)|*.JPG;*.PNG";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                PicFileName = openFile.FileName;
+                picStudent.Image = Image.FromFile(PicFileName);
+                if (openFile.FileName.ToString() != "")
+                {
+                    PicFileName = openFile.FileName.ToString();
+                    PicName = PicFileName.ToString();
+                    PicName = PicName.Substring(PicName.LastIndexOf("\\"));
+                    PicName = PicName.Remove(0, 1);
+                }
+            }
+            openFile.Dispose();
         }
 
         private void rbnMale_CheckedChanged(object sender, EventArgs e)
@@ -51,6 +70,7 @@ namespace PRG282_Project
         {
             //TODO: Check for empty fields
             //TODO: Save to database
+            handlerF.PicSave(PicFileName, PicName);
             tbxID.Text = "";
             tbxFullname.Text = "";
             rbnMale.Checked = false;

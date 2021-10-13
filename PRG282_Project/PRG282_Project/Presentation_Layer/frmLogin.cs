@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PRG282_Project.Logic_Layer;
 
 namespace PRG282_Project
 {
@@ -73,7 +72,7 @@ namespace PRG282_Project
         {
             if ((String.IsNullOrEmpty(tbxUsername.Text)) || (String.IsNullOrEmpty(tbxPassw1.Text)) || (String.IsNullOrEmpty(tbxPassw2.Text))) 
             {
-                MessageBox.Show("Please fill in all of the above fields and try again","Uh oh!");
+                //ignore
             }
             else 
             { 

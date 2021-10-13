@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,7 @@ namespace PRG282_Project
             else
             {
                 dgvDatabase.DataSource = handler.searchModules(int.Parse(txtSearchdata.Text));
+                picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
             }
         }
 
@@ -85,6 +87,7 @@ namespace PRG282_Project
         private void dgvDatabase_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
+            picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
         }
     }
 }

@@ -80,5 +80,14 @@ namespace PRG282_Project.Logic_Layer
 
             wrt.Close();
         }
+
+        public void PicSave(string picSource, string picName)
+        {
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string Name = picName;
+            var destination = Path.Combine(projectFolder, @"Images\"+Name);
+            string source = picSource;
+            System.IO.File.Copy(source, destination, true);
+        }
     }
 }
