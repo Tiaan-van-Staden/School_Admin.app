@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PRG282_Project.Data_Layer
 {
@@ -22,13 +23,13 @@ namespace PRG282_Project.Data_Layer
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@StudentID", id);
-                cmd.Parameters.AddWithValue("@StudentName", name);
+                cmd.Parameters.AddWithValue("@StudentNames", name);
                 cmd.Parameters.AddWithValue("@StudentImg", img);
-                cmd.Parameters.AddWithValue("@StudentDob", dob);
+                cmd.Parameters.AddWithValue("@StudentDOB", dob);
                 cmd.Parameters.AddWithValue("@StudentGender", gender);
                 cmd.Parameters.AddWithValue("@StudentPhone", phone);
                 cmd.Parameters.AddWithValue("@StudentAddress", address);
-                cmd.Parameters.AddWithValue("@ModuleCode", modulecode);
+                cmd.Parameters.AddWithValue("@ModuleCodes", modulecode);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -41,11 +42,11 @@ namespace PRG282_Project.Data_Layer
             {
                 SqlCommand cmd = new SqlCommand("spAddModule", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@ModuleCode", code);
+                
+                cmd.Parameters.AddWithValue("@ModuleCodes", code);
                 cmd.Parameters.AddWithValue("@ModuleName", modulename);
                 cmd.Parameters.AddWithValue("@ModuleDesc", moduledesc);
-                cmd.Parameters.AddWithValue("@ModuleLink", modulelink);
+                cmd.Parameters.AddWithValue("@ModuleLinks", modulelink);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -138,14 +139,14 @@ namespace PRG282_Project.Data_Layer
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@StudentID", id);
-                cmd.Parameters.AddWithValue("@StudentName", name);
+                cmd.Parameters.AddWithValue("@StudentNames", name);
                 cmd.Parameters.AddWithValue("@StudentImg", img);
-                cmd.Parameters.AddWithValue("@StudentDob", dob);
+                cmd.Parameters.AddWithValue("@StudentDOB", dob);
                 cmd.Parameters.AddWithValue("@StudentGender", gender);
                 cmd.Parameters.AddWithValue("@StudentPhone", phone);
                 cmd.Parameters.AddWithValue("@StudentAddress", address);
-                cmd.Parameters.AddWithValue("@ModuleCode", modulecode);
-                
+                cmd.Parameters.AddWithValue("@ModuleCodes", modulecode);
+
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -158,10 +159,10 @@ namespace PRG282_Project.Data_Layer
                 SqlCommand cmd = new SqlCommand("spUpdateModules", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@ModuleCode", code);
+                cmd.Parameters.AddWithValue("@ModuleCodes", code);
                 cmd.Parameters.AddWithValue("@ModuleName", modulename);
                 cmd.Parameters.AddWithValue("@ModuleDesc", moduledesc);
-                cmd.Parameters.AddWithValue("@ModuleLink", modulelink);
+                cmd.Parameters.AddWithValue("@ModuleLinks", modulelink);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();

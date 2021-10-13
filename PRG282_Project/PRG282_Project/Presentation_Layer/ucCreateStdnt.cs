@@ -20,7 +20,9 @@ namespace PRG282_Project
         }
         public string PicFileName = "";
         public string PicName = "";
+        public string Gender = "";
         FileHandler handlerF = new FileHandler();
+        DataHandler handlerD = new DataHandler();
 
         public void picStudent_Click(object sender, EventArgs e)
         {
@@ -44,21 +46,23 @@ namespace PRG282_Project
             //MessageBox.Show("Insert code to save image", "Remove this message when done with code");
         }
 
-        private void rbnMale_CheckedChanged(object sender, EventArgs e)
+        public void rbnMale_CheckedChanged(object sender, EventArgs e)
         {   
             //if Male is checked, uncheck Female
             if (rbnMale.Checked == true)   
             {
                 rbnFemale.Checked = false;
+                Gender = "Male";
             }
         }
 
-        private void rbnFemale_CheckedChanged(object sender, EventArgs e)
+        public void rbnFemale_CheckedChanged(object sender, EventArgs e)
         {
             //if Female is checked, uncheck Male
             if (rbnFemale.Checked == true)
             {
                 rbnMale.Checked = false;
+                Gender = "Female";
             }
         }
 
@@ -75,6 +79,9 @@ namespace PRG282_Project
             //TODO: Check for empty fields
             //TODO: Save to database
             handlerF.PicSave(PicFileName, PicName);
+            handlerD.insertStudent(int.Parse(tbxID.Text), tbxFullname.Text, PicFileName, dtpDOB.Value.ToString(), Gender, tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex.ToString());
+            MessageBox.Show("Student created succesfully");
+
             tbxID.Text = "";
             tbxFullname.Text = "";
             rbnMale.Checked = false;

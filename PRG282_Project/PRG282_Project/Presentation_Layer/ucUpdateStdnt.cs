@@ -23,6 +23,8 @@ namespace PRG282_Project
         }
         public string PicFileName = "";
         public string PicName = "";
+        public string Gender = "";
+        
         FileHandler handlerF = new FileHandler();
         private void ucUpdateStdnt_Load(object sender, EventArgs e)
         {
@@ -52,21 +54,23 @@ namespace PRG282_Project
             openFile.Dispose();
         }
 
-        private void rbnMale_CheckedChanged(object sender, EventArgs e)
+        public void rbnMale_CheckedChanged(object sender, EventArgs e)
         {
             //if Male is checked, uncheck Female
             if (rbnMale.Checked == true)
             {
                 rbnFemale.Checked = false;
+                Gender = "Male";
             }
         }
 
-        private void rbnFemale_CheckedChanged(object sender, EventArgs e)
+        public void rbnFemale_CheckedChanged(object sender, EventArgs e)
         {
             //if Female is checked, uncheck Male
             if (rbnFemale.Checked == true)
             {
                 rbnMale.Checked = false;
+                Gender = "Female";
             }
         }
 
@@ -75,6 +79,9 @@ namespace PRG282_Project
             //TODO: Check for empty fields
             //TODO: Save to database
             handlerF.PicSave(PicFileName, PicName);
+            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, PicFileName ,dtpDOB.Value.ToString(), Gender, tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex.ToString());
+            MessageBox.Show("Student updated succesfully");
+
             tbxID.Text = "";
             tbxFullname.Text = "";
             rbnMale.Checked = false;
@@ -83,8 +90,7 @@ namespace PRG282_Project
             tbxAddress.Text = "";
             picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
           
-            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, dtpDOB.Value.ToString(), rbnMale.Checked.ToString(), rbnFemale.Checked.ToString(), tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex.ToString());
-            MessageBox.Show("Student updated succesfully");
+            
         }
 
     }
