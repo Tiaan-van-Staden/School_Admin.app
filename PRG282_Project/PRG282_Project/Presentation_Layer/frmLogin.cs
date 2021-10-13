@@ -61,11 +61,28 @@ namespace PRG282_Project
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            if ((String.IsNullOrEmpty(tbxUsername.Text)) || (String.IsNullOrEmpty(tbxPassw1.Text)) || (String.IsNullOrEmpty(tbxPassw2.Text))) 
+            {
+                MessageBox.Show("Please fill in all of the above fields and try again","Uh oh!");
+            }
+            else 
+            { 
             string p1 = tbxPassw1.Text;
             string p2 = tbxPassw2.Text;
             string un = tbxUsername.Text;
 
             handler.Register(un, p1, p2);
+            pnlRegister.Visible = false;
+            btnRegister.Visible = false;
+            btnBack.Visible = false;
+            btnLogin.Visible = true;
+            btnShowRegister.Visible = true;
+            this.Height = 550;
+            tbxUsername.Text = "";
+            tbxPassw1.Text = "";
+            tbxPassw2.Text = "";
+            }
+
         }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)

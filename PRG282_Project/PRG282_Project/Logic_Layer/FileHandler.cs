@@ -35,7 +35,7 @@ namespace PRG282_Project.Logic_Layer
 
             while ((line = sr.ReadLine()) != null)
             {
-                string[] component = line.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                string[] component = line.Split("#".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 users.Add(component[0]);
                 pass.Add(component[1]);
             }
@@ -68,7 +68,7 @@ namespace PRG282_Project.Logic_Layer
 
             if (pas1 == pas2)
             {
-                wrt.WriteLine(usern + " " + pas1);
+                wrt.WriteLine(usern + "#" + pas1);
                 MessageBox.Show("Acount succesfully created please log in to continue");
             }
             else
