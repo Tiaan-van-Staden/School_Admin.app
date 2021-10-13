@@ -82,8 +82,8 @@ namespace PRG282_Project
             tbxPhone.Text = "";
             tbxAddress.Text = "";
             picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
-
-            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, dtpDOB.Value, rbnMale.Checked, rbnFemale.Checked, tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex);
+          
+            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, dtpDOB.Value.ToString(), rbnMale.Checked.ToString(), rbnFemale.Checked.ToString(), tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex.ToString());
             MessageBox.Show("Student updated succesfully");
         }
 

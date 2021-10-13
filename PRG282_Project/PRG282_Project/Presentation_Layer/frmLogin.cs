@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//remember to run the sql file in MilestonePRG282-class\PRG282_Project\Database in your ssms to create the databse if it has not been created yet
 namespace PRG282_Project
 {
     public partial class frmLogin : Form
