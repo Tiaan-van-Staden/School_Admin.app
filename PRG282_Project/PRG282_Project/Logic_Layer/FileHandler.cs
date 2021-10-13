@@ -15,6 +15,7 @@ namespace PRG282_Project.Logic_Layer
         List<string> pass = new List<string>();
 
         public static string LoginUsername;
+        public static bool blLoginClose = false;
 
         public void Login(string uname, string p1)
         {
@@ -44,9 +45,10 @@ namespace PRG282_Project.Logic_Layer
             {
                 MessageBox.Show("Welcome " + uname);
                 frmMain MainLoad = new frmMain();
-                frmLogin frmlog = new frmLogin();
+                //frmLogin frmlog = new frmLogin();
                 LoginUsername = uname;
-                frmlog.Hide();   //TODO: lucien please look at why this doesnt hide
+                blLoginClose = true;
+                //frmlog.Hide();   //TODO: lucien please look at why this doesnt hide
                 MainLoad.Show();
             }
             else

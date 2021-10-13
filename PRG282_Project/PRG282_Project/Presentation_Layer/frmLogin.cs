@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRG282_Project.Logic_Layer;
 
 namespace PRG282_Project
 {
@@ -57,6 +58,15 @@ namespace PRG282_Project
             string p1 = tbxPassw1.Text;
 
             handler.Login(uname, p1);
+            bool blClose = FileHandler.blLoginClose;
+            if (blClose == true)
+            {
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("The Login page should have closed...","This is awkward");
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
