@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project.Data_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace PRG282_Project.Presentation_Layer
 {
     public partial class ucUpdateMod : UserControl
     {
+        DataHandler handler = new DataHandler();
+
         public ucUpdateMod()
         {
             InitializeComponent();
@@ -25,6 +28,9 @@ namespace PRG282_Project.Presentation_Layer
             tbxDesc.Text = "";
             tbxLink.Text = "";
             tbxName.Text = "";
+
+            handler.updateModule(int.Parse(tbxCode.Text), tbxName.Text, tbxDesc.Text, tbxLink.Text);
+            MessageBox.Show("Module updated succesfully");
         }
     }
 }

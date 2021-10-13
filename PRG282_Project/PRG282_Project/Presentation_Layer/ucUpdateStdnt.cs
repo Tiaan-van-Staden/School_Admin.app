@@ -13,6 +13,8 @@ namespace PRG282_Project
 {
     public partial class ucUpdateStdnt : UserControl
     {
+        DataHandler handler = new DataHandler();
+
         public ucUpdateStdnt()
         {
             InitializeComponent();
@@ -78,6 +80,9 @@ namespace PRG282_Project
             tbxPhone.Text = "";
             tbxAddress.Text = "";
             picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
+
+            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, dtpDOB.Value, rbnMale.Checked, rbnFemale.Checked, tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex);
+            MessageBox.Show("Student updated succesfully");
         }
 
     }
