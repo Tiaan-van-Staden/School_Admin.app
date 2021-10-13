@@ -21,6 +21,16 @@ namespace PRG282_Project.Logic_Layer
             var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             var file = Path.Combine(projectFolder, @"bin\Registerd.txt");
             StreamReader sr = new StreamReader(@"" + file);
+            //checking if file exists
+            if (File.Exists(file))
+            {
+                //ignore this part unless you need code here
+            }
+            else
+            {
+                //creating file if not exist
+                File.Create(file);
+            }
             string line = "";
 
             while ((line = sr.ReadLine()) != null)

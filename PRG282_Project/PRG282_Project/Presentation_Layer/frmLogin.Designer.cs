@@ -69,7 +69,7 @@ namespace PRG282_Project
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnBack.Location = new System.Drawing.Point(319, 24);
+            this.btnBack.Location = new System.Drawing.Point(280, 24);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(252, 50);
             this.btnBack.TabIndex = 3;
