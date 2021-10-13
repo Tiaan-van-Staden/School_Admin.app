@@ -16,7 +16,7 @@ namespace PRG282_Project.Logic_Layer
         
         public void Login(string uname, string p1)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\tiaan\Desktop\ItIzz\Registerd.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\tiaan\Documents\GitHub\MilestonePRG282-class\bin\registerd.txt");
             string line = "";
 
             while ((line = sr.ReadLine()) != null)
@@ -44,7 +44,7 @@ namespace PRG282_Project.Logic_Layer
 
         public void Register(string un, string p1, string p2)
         {
-            TextWriter wrt = new StreamWriter(@"C:\Users\tiaan\Desktop\ItIzz\Registerd.txt");
+            TextWriter wrt = new StreamWriter(@"C:\Users\tiaan\Documents\GitHub\MilestonePRG282-class\bin\registerd.txt", true);
             string usern = un;
             string pas1 = p1;
             string pas2 = p2;
@@ -61,12 +61,5 @@ namespace PRG282_Project.Logic_Layer
 
             wrt.Close();
         }
-
-        
-        
-
-            
-
-    
     }
 }
