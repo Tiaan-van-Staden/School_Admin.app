@@ -88,6 +88,13 @@ namespace PRG282_Project.Logic_Layer
             var destination = Path.Combine(projectFolder, @"Images\"+Name);
             string source = picSource;
             System.IO.File.Copy(source, destination, true);
+
+            /*byte[] ImageData;
+            FileStream fs = new FileStream(destination, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            ImageData = br.ReadBytes((int)fs.Length);
+            br.Close();
+            fs.Close();*/
         }
     }
 }

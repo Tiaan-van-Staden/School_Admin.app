@@ -79,18 +79,15 @@ namespace PRG282_Project
             //TODO: Check for empty fields
             //TODO: Save to database
             handlerF.PicSave(PicFileName, PicName);
-            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, PicFileName ,dtpDOB.Value.ToString(), Gender, tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex.ToString());
+            handler.updateStudent(int.Parse(tbxID.Text), tbxFullname.Text, PicFileName ,dtpDOB.Value.ToString(), Gender, tbxPhone.Text, tbxAddress.Text, cmbModules.SelectedIndex.ToString(), PicFileName);
             MessageBox.Show("Student updated succesfully");
 
-            tbxID.Text = "";
-            tbxFullname.Text = "";
-            rbnMale.Checked = false;
-            rbnFemale.Checked = false;
-            tbxPhone.Text = "";
-            tbxAddress.Text = "";
-            picStudent.Image = PRG282_Project.Properties.Resources.DefaultUser; //reset picStudent to default.
-          
-            
+            frmMain MainLoad = new frmMain();
+            MainLoad.Show();
+            frmMain.blFormCloseProcess = false;
+            ((Form)this.TopLevelControl).Close();
+
+
         }
 
     }

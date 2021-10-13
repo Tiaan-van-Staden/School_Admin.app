@@ -38,6 +38,7 @@ namespace PRG282_Project
             if (selectedIndex == 0)
             {
                 dgvDatabase.DataSource = handler.searchStudents(int.Parse(txtSearchdata.Text));
+                //extract data from datagridview dgbDatabase for student details in student summary at richtextbox
             }
             else
             {

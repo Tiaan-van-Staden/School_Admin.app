@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
+using System.Collections.Generic;
 
 namespace PRG282_Project.Data_Layer
 {
@@ -15,8 +17,14 @@ namespace PRG282_Project.Data_Layer
 
         string conn = "Server=(local); Initial Catalog=StudentDB; Integrated Security=SSPI";
 
-        public void insertStudent(int id, string name, string img, string dob, string gender, string phone, string address, string modulecode)
+        public void insertStudent(int id, string name, string img, string dob, string gender, string phone, string address, string modulecode, string picFile)
         {
+            byte[] ImageData;
+            FileStream fs = new FileStream(picFile, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            ImageData = br.ReadBytes((int)fs.Length);
+            br.Close();
+            fs.Close();
             using (SqlConnection connection = new SqlConnection(conn))
             {
                 SqlCommand cmd = new SqlCommand("spAddstudent", connection);
@@ -24,7 +32,7 @@ namespace PRG282_Project.Data_Layer
 
                 cmd.Parameters.AddWithValue("@StudentID", id);
                 cmd.Parameters.AddWithValue("@StudentNames", name);
-                cmd.Parameters.AddWithValue("@StudentImg", img);
+                cmd.Parameters.AddWithValue("@StudentImg", ImageData);
                 cmd.Parameters.AddWithValue("@StudentDOB", dob);
                 cmd.Parameters.AddWithValue("@StudentGender", gender);
                 cmd.Parameters.AddWithValue("@StudentPhone", phone);
@@ -131,16 +139,22 @@ namespace PRG282_Project.Data_Layer
             }
         }
 
-        public void updateStudent(int id, string name, string img, string dob, string gender,string phone, string address, string modulecode)
+        public void updateStudent(int id, string name, string img, string dob, string gender,string phone, string address, string modulecode, string picFile)
         {
             using (SqlConnection connection = new SqlConnection(conn))
             {
+                byte[] ImageData;
+                FileStream fs = new FileStream(picFile, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                ImageData = br.ReadBytes((int)fs.Length);
+                br.Close();
+                fs.Close();
                 SqlCommand cmd = new SqlCommand("spUpdatestudent", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@StudentID", id);
                 cmd.Parameters.AddWithValue("@StudentNames", name);
-                cmd.Parameters.AddWithValue("@StudentImg", img);
+                cmd.Parameters.AddWithValue("@StudentImg", ImageData);
                 cmd.Parameters.AddWithValue("@StudentDOB", dob);
                 cmd.Parameters.AddWithValue("@StudentGender", gender);
                 cmd.Parameters.AddWithValue("@StudentPhone", phone);
